@@ -28,24 +28,28 @@ function Nav() {
 	return (
 		<header>
 			<h2>
-				<a href="/">
+				<a data-testid="link" href="/">
 					<span role="img" aria-label="camera">
 						📸
 					</span>{" "}
-					Oh snap!
+					Oh Snap!
 				</a>
 			</h2>
 			<nav>
 				<ul className="flex-row">
 					<li className="mx-2">
-						<a href="#about">About Me</a>
+						<a data-testid="about" href="#about">
+							About Me
+						</a>
 					</li>
 					<li>
 						<span>Contact</span>
 					</li>
 					{categories.map((category) => (
 						<li className="mx-1" key={category.name}>
-							<span onClick={() => categorySelected(category.name)}>{category.name}</span>
+							<span onClick={() => categorySelected(category.name)}>
+								{category.name}
+							</span>
 						</li>
 					))}
 				</ul>
